@@ -1,0 +1,125 @@
+ OPLS-AA defaults are used but exclusions are added to TraPPE-UA so that 
+; this does not have any effect on intermolecular interactions.
+
+[ defaults ]
+; nbfunc	comb-rule	gen-pairs	fudgeLJ	fudgeQQ
+1             3            yes         0.5    0.5
+
+#include "oplsaa.ff/ffnonbonded.itp"
+#include "oplsaa.ff/ffbonded.itp"
+
+[ atomtypes ]
+;name        typ    MW           q                V@nm         W@kj/mol
+    ow       ow     15.99940     0.000000    A    3.15890e-01  7.74910e-01 ; TIP4P/2005
+    hw       hw      1.00800     0.556400    A    0.00000e+00  0.00000e+00 ; TIP4P/2005
+    be       be      0.00000    -1.112800    D    0.00000e+00  0.00000e+00 ; TIP4P/2005
+    ca       ca     12.01100     0.000000    A    3.55000e-01  2.92880e-01 ; opls_147  Naphthalene fusion C (C9)
+
+; HH-Alkane modifications for cross interactions between alkane carbons and water
+; oxygens.
+; The following comes from Table 1 of H.S. Ashbaugh, L. Liu, and L.N. Surampudi.
+; J.Chem. Phys. 135, 054510 (2011). 
+
+[ nonbond_params ]
+; i      j      funct    V              W
+  ca    ow         1        3.32620e-01    3.87438e-01 ; from Koga 2001 
+  ow	ow	   1        3.15890E-01    7.74910E-01
+  ow	hw	   1        1.57945E-01    0.00000E+00
+  ow	be	   1        1.57945E-01    0.00000E+00
+  hw	hw	   1        0.00000E+00    0.00000E+00
+  hw	be	   1        0.00000E+00    0.00000E+00
+  hw	ca	   1        0.00000E+00    0.00000E+00
+  be	be	   1        0.00000E+00    0.00000E+00
+  be	ca	   1        0.00000E+00    0.00000E+00
+  ca	ca	   1        3.55000E-01    2.92880E-01
+
+[ bondtypes ]
+;bond                ftype  bond lenght/nm constant(kJ/mol/nm2)
+  ca    ca              1   0.14000       392459.2 ; TRP,TYR,PHE
+
+[ angletypes ]
+;angle               ftype  angle/deg   kteta,kj/mol
+  ca     ca     ca      1   120.000      527.184   ; PHE(OL)
+
+[ dihedraltypes ]
+; Fourier dihedraltypes translated to Gromacs Ryckaert-Bellemans using the
+; following formulas, where F indicates values from Table 1 of Chen or Table 2
+; of Martin.
+; C0 =   F0 +  F1 + 2F2 + F3
+; C1 =  -F1 + 3F3
+; C2 = -2F2 + 8F4
+; C3 = -4F3
+; C4 = -8F4
+; C5 =  0
+; i    j    k    l    func       C0        C1        C2         C3        C4        C5
+  ca     ca     ca    ca     3     30.33400   0.00000 -30.33400   0.00000 0.00000 0.00000 ; aromatic ring
+
+[ moleculetype ]
+; molname       nrexcl ; TIP4P/2005 model
+  WAT             2
+
+[ atoms ]
+;   nr   type  resnr residue  atom   cgnr     charge       mass
+     1     ow      1     WAT     O      1      0.0000  15.99940
+     2     hw      1     WAT    H1      1      0.5564   1.00800
+     3     hw      1     WAT    H2      1      0.5564   1.00800
+     4     be      1     WAT    BE      1     -1.1128   0.00000
+ 
+#ifndef FLEXIBLE
+[ settles ]
+; OW    funct   doh        dhh
+1       1       0.09572    0.15139
+
+#ifdef FLEXIBLE
+[ bonds ]
+; i j   funct   length  force.c.
+1   2   1   0.09572   462750.4 0.09572   462750.4
+1   3   1   0.09572   462750.4 0.09572   462750.4
+
+[ angles ]
+; i j   k   funct   angle   force.c.
+2   1   3   1   104.520    836.800  104.520    836.800
+
+[ exclusions ]
+1       2       3       4
+2       1       3       4
+3       1       2       4
+4       1       2       3
+#endif
+
+[ virtual_sites3 ]
+; Vsite from                    funct   a               b
+4       1       2       3       1       0.131937768     0.131937768
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       5000       5000       5000
+#endif
+
+#include "graphene.itp"
+
+;#include "graphene+.itp"
+
+;#include "graphene-.itp"
+
+
+;#include "methane.itp"
+;#include "ethane.itp"
+;#include "oct.itp"
+#include "pentane.itp"
+
+[ system ]
+; Name
+Pentane water in graphene
+
+[ molecules ]
+; Compound        #mols
+GRF		    5;4
+;OCT                60;51
+;MET             1680
+;ETH              840
+PENT           336
+WAT              1680;1659
+GRF                5;4
