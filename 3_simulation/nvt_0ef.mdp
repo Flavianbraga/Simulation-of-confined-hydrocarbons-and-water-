@@ -40,4 +40,3 @@ wall-atomtype        = ca   ca
 wall-type            = 12-6                         
 ewald-geometry       = 3dc
 wall-r-linpot        = 1
-;electric-field-z     = 7 0 0 0 
