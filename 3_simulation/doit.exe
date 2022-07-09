@@ -1,4 +1,7 @@
-#Important to make index file to select in thermostat
+#Important to make index file to select in thermostat "bulk" uniting hydrocarbon and water
+# For hydrocarbons bigger than methane: unite 
+# 2 | 3  #2=CH2 and 3=CH3 
+# name 8 bulk #8 is the new index created
 
 #gmx make_ndx -f confined_xy.gro -o index_xy.ndx
 
