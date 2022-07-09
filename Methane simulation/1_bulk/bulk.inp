@@ -1,0 +1,18 @@
+#Mixture methane and water
+
+#randominitialpoint
+
+tolerance 2.0
+filetype pdb
+output conf_bulk.pdb
+seed -1
+
+structure methane.pdb
+ number 1680 
+ inside box 0. 0. 0. 46.0725 47.6 56.0 #accounting for deviation in y
+end structure 
+
+structure wat.pdb
+ number 1680
+ inside box 0. 0. 0. 46.0725 47.6 56.0 #accounting for deviation in y
+end structure 
