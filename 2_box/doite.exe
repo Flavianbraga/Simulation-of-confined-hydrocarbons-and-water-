@@ -1,14 +1,14 @@
 #C language compiler for the 'input.c' code to file 'out'
 gcc input_conf.c -o out -lm
 
-#Eecutable file 'out', 'prod_out.gro'- original file, 'confined.gro'- output file
+#Eecutable file 'out', 'prod_out.gro'- original file, 'confined_xy.gro'- output file
 #Choose the hydrocarbon
 
-./out em.gro conf_bulk.gro confined.gro 836 1680 5 1680 4 #For methane
+./out em.gro conf_bulk.gro confined_xy.gro 836 1680 5 1680 4 #For methane
 
-#./out em.gro conf_bulk.gro confined.gro 836 420 14 1680 4 #For butane
+#./out em.gro conf_bulk.gro confined_xy.gro 836 420 14 1680 4 #For butane
 
-#./out em.gro conf_bulk.gro confined.gro 836 336 17 1680 4 #For pentane
+#./out em.gro conf_bulk.gro confined_xy.gro 836 336 17 1680 4 #For pentane
 
 
 
