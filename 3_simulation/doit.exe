@@ -1,0 +1,26 @@
+#Important to make index file to select in thermostat
+
+#gmx make_ndx -f confined_xy.gro -o index_xy.ndx
+
+#Minimization
+gmx grompp -f minim.mdp -c confined_xy.gro -p topol.top -o em.tpr -n index_xy.ndx -r confined_xy.gro 
+gmx mdrun -v -deffnm em
+
+#Equilibration
+gmx grompp -f nvt_0ef.mdp -c em.gro -p topol.top -o nvt_out_0ef.tpr -n index_xy.ndx -r confined_xy.gro
+gmx mdrun -pin on -v -deffnm nvt_out_0ef -s nvt_out_0ef.tpr
+
+#gmx grompp -f nvt_1.5ef.mdp -c em.gro -p topol.top -o nvt_out_1.5ef.tpr -n index_xy.ndx -r confined_xy.gro
+#gmx mdrun -pin on -v -deffnm nvt_out_1.5ef -s nvt_out_1.5ef.tpr
+
+#gmx grompp -f nvt_3ef.mdp -c em.gro -p topol.top -o nvt_out_3ef.tpr -n index_xy.ndx -r confined_xy.gro
+#gmx mdrun -pin on -v -deffnm nvt_out_3ef -s nvt_out_3ef.tpr
+
+#gmx grompp -f nvt_4.5ef.mdp -c em.gro -p topol.top -o nvt_out_4.5ef.tpr -n index_xy.ndx -r confined_xy.gro
+#gmx mdrun -pin on -v -deffnm nvt_out_4.5ef -s nvt_out_4.5ef.tpr
+
+#gmx grompp -f nvt_6ef.mdp -c em.gro -p topol.top -o nvt_out_6ef.tpr -n index_xy.ndx -r confined_xy.gro
+#gmx mdrun -pin on -v -deffnm nvt_out_6ef -s nvt_out_6ef.tpr
+
+#gmx grompp -f nvt_7.5ef.mdp -c em.gro -p topol.top -o nvt_out_7.5ef.tpr -n index_xy.ndx -r confined_xy.gro
+#gmx mdrun -pin on -v -deffnm nvt_out_7.5ef -s nvt_out_7.5ef.tpr
