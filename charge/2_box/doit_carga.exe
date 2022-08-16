@@ -1,0 +1,15 @@
+gcc input_conf.c -o out -lm
+#C language compiler for the 'input.c' code to file 'out'
+./out conf_gra5+.gro conf_bulk_carga.gro confined_carga.gro conf_gra5-.gro 836 1680 5 1680 4
+# 1) Name of input .gro file for first wall                     
+# 2) Name of input .gro file for bulk                     
+# 3) Name of output .gro       
+# 4) Name of input .gro file for second wall                           
+# 5) Number of atoms per molecule of wall                
+# 6) Number of molecules of 1st element in bulk           
+# 7) Number of atoms per molecules of 1st element in bulk 
+# 8) Number of molecules of 2nd element in bulk          
+# 9) Number of atoms per molecules of 2nd element in bulk
+
+#Move file
+cp confined_carga.gro ../3_simu_carga
