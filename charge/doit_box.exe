@@ -1,6 +1,6 @@
 gcc input_conf.c -o out -lm
 #C language compiler for the 'input.c' code to file 'out'
-./out conf_gra5+.gro conf_bulk_carga.gro confined_carga.gro conf_gra5-.gro 836 1680 5 1680 4
+./out conf_gra5+.gro conf_bulk.gro confined_carga.gro conf_gra5-.gro 836 1680 5 1680 4
 # 1) Name of input .gro file for first wall                     
 # 2) Name of input .gro file for bulk                     
 # 3) Name of output .gro       
