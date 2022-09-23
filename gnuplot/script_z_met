@@ -1,0 +1,32 @@
+set terminal postscript eps enhanced color size 6.6,3.3 font "Helvetica,18" linewidth 2
+set output 'density_met_mult.eps'
+set key center top
+set ytics add('0' 0) nomirror
+set xtics nomirror
+set ylabel "Density / kg.m^-^3" font ",20" offset 0.5,0,0
+set xlabel "z / nm" font ",20"
+#set ytics format "%.1f"
+set yrange [0:2000]
+set xrange [0:9]
+set size square
+set multiplot layout 2,3
+#set size .5,1
+set label "0.0 V/nm" at graph 0.5,0.9 center font ",20"
+plot	"density_0ef_metz.xvg"   u 1:2 w l lw 1.5 dt 1 lc rgb "red" t "" 
+unset label
+set label "1.5 V/nm" at graph 0.5,0.9 center font ",20"
+plot	"density_1.5ef_metz.xvg" u 1:2 w l lw 1.5 dt 1 lc rgb "red" t ""
+unset label
+set label "3.0 V/nm" at graph 0.5,0.9 center font ",20"
+plot	"density_3ef_metz.xvg"   u 1:2 w l lw 1.5 dt 1 lc rgb "red" t ""
+unset label
+set label "4.5 V/nm" at graph 0.5,0.9 center font ",20"
+plot	"density_4.5ef_metz.xvg" u 1:2 w l lw 1.5 dt 1 lc rgb "red" t ""
+unset label
+set label "6.0 V/nm" at graph 0.5,0.9 center font ",20"
+plot	"density_6ef_metz.xvg"   u 1:2 w l lw 1.5 dt 1 lc rgb "red" t ""
+unset label
+set label "7.5 V/nm" at graph 0.5,0.9 center font ",20"
+plot	"density_7.5ef_metz.xvg" u 1:2 w l lw 1.5 dt 1 lc rgb "red" t ""
+unset multiplot
+
