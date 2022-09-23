@@ -1,0 +1,42 @@
+set terminal postscript eps enhanced color size 6.6,3.3 font "Helvetica,18" linewidth 2
+set output 'order_met_wat.eps'
+set key center top
+set ytics font ",15" -0.5, 0.5, 1 
+set xtics font ",15" nomirror 0,2,9
+set y2tics font ",15" 0, 500, 1500 offset -0.5,0
+set ylabel "Order Parameter (S)" font ",18" offset 1.5,0,0
+set xlabel "z / nm" font ",18"
+set y2label "Density / kg m^-^3" font ",18" offset -1.5,0,0
+#set ytics format "%.1f"
+set yrange [-0.5:1]
+set xrange [0:9]
+set y2range [0:1500]
+set size square
+set multiplot layout 2,3
+#set size .5,1
+set label "0.0 V/nm" at graph 0.5,0.9 center font ",15"
+plot	"../density/density_0ef_watz.xvg"   u 1:2 w l lw 1.5 dt 3 lc rgb "blue" notitle axis x1y2,\
+	    "order_wat_0ef.dat"   u 2:3 w l lw 3 dt 1 lc rgb "black" notitle axis x1y1
+unset label
+set label "1.5 V/nm" at graph 0.5,0.9 center font ",15"
+plot	"../density/density_1.5ef_watz.xvg" u 1:2 w l lw 1.5 dt 3 lc rgb "blue" notitle axis x1y2,\
+	    "order_wat_1.5ef.dat" u 2:3 w l lw 3 dt 1 lc rgb "black" t "" axis x1y1
+unset label
+set label "3.0 V/nm" at graph 0.5,0.9 center font ",15"
+plot	"../density/density_3ef_watz.xvg"   u 1:2 w l lw 1.5 dt 3 lc rgb "blue" notitle axis x1y2,\
+	    "order_wat_3ef.dat"   u 2:3 w l lw 3 dt 1 lc rgb "black"  t "" axis x1y1
+unset label
+set label "4.5 V/nm" at graph 0.5,0.9 center font ",15"
+plot	"../density/density_4.5ef_watz.xvg" u 1:2 w l lw 1.5 dt 3 lc rgb "blue" notitle axis x1y2,\
+	    "order_wat_4.5ef.dat" u 2:3 w l lw 3 dt 1 lc rgb "black"  t "" axis x1y1
+unset label
+set label "6.0 V/nm" at graph 0.5,0.9 center font ",15"
+plot	"../density/density_6ef_watz.xvg"   u 1:2 w l lw 1.5 dt 3 lc rgb "blue" notitle axis x1y2,\
+	    "order_wat_6ef.dat"   u 2:3 w l lw 3 dt 1 lc rgb "black"  t "" axis x1y1
+unset label
+set label "7.5 V/nm" at graph 0.5,0.9 center font ",15"
+plot	"../density/density_7.5ef_watz.xvg" u 1:2 w l lw 1.5 dt 3 lc rgb "blue" notitle axis x1y2,\
+	    "order_wat_7.5ef.dat" u 2:3 w l lw 3 dt 1 lc rgb "black"  t "" axis x1y1
+unset label	
+unset multiplot
+
