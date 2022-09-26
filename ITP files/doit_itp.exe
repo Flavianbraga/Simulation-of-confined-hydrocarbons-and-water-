@@ -1,0 +1,1 @@
+gmx pdb2gmx -f oct.pdb -ff oplsaa -water none
