@@ -36,18 +36,11 @@
 <p align="center"><b>Authors</b></p>
 <p align="center">
 Flavia N. Braga<br>
-
-<p align="right"><b><sub>Version: 1.0.1</sub></b></p>
-
-<p align="center"><b>Authors</b></p>
-<p align="center">
-Flavia Nogueira Braga<br>
-Marcelle Spera<br>
-Luís Fernando Mercier Franco<br></p>
-
-# Self-diffusion coefficients for confined fluids in a slit pore 
+ 
+# Abstract 
 <p align="justify">
-This algorithm was originally designed to calculate the self-diffusion coefficient of the components of a confined system in tree dimensions from data obtained by a Molecular Dynamics Simulation with GROMACS for a alit pore. In this work, x and y will be called the parallel directions and z is the perpenticular direction, since the wall of the system is in the z axis. The self-diffusion coefficients for the parallel components are calculated based on the work developed by Liu and collaborators (<a href="https://doi.org/10.1021/jp0375057">Liu et al., <b>J. Phys. Chem. B</b>, 108, 21, 6595–6602, 2004</a>). The perpendicular self-diffusion coefficient calculation, however, is based on the work developed by Franco and collaborators (<a href="https://doi.org/10.1021/acs.jctc.6b00653">Franco et al., <b> J. Chem. Theory Comput.</b>, 12, 11, 5247–5255, 2016</a>).
+  The codes presented in this page were used to develop the dissertation of Flávia Nogueira Braga in partial fulfillment of the requirements for the degree of Master in Chemical Engineering at Unicamp - Brazil. The dissertation entitled "Study of diffusion aspects in confined media subject to external electric potential for application in catalysis via Molecular Dynamics simulations" is attached. 
+  
   
    <em><p align="center">
   <b>Figure 01</b>. Example of slit pore of calcite containing methane and ethane.
