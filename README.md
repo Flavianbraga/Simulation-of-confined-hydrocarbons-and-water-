@@ -72,7 +72,7 @@ The main program, subroutines and functions contain some explanatory comments an
 
 ## Reporting Errors
 <p align="justify">
-If you spot an error in the program files and all other documentation, please submit an issue report using the <a href="https://github.com/LESC-Unicamp/Self-diffusion-coefficients-for-confined-fluids-in-a-slit-pore-/issues">Issues</a> tab.
+If you spot an error in the program files and all other documentation, please submit an issue report using the <a href="https://github.com/Flavianbraga/Codes-for-dissertation/issues)">Issues</a> tab.
 </p>
 
 ## Input files preparation
@@ -82,6 +82,13 @@ Before using GROMACS (version 2021.2 tested) the initial files have to be prepar
 The system chosen as representative of the Fischer-Tropsch synthesis was the product of the reaction: hydrocarbons and water, confined in a slit pore of graphene sheets, with 5 layers in each side of the pore of 5.88 nm of width [Papavasileiou et al., 2021]. The hydrocarbons selected were methane, n-butane, and n-pentane. The composition of the mixtures studied were calculated based on the stoichiometry of the FTS reaction and assumes a 1:1 H 2 O : CH x (x = 2 or 3) ratio in the pore.
 
 Initially, one sheet of graphene was created based on a sort of unitary cell of 4 atoms of carbon, forming half of regular hexagon with an angle of 120° between the atoms, as show in Figure 3.1. This is done using sheet <a href="https://github.com/Flavianbraga/Codes-for-dissertation/tree/main/graphene">Graphene</a>. 
+
+  <em><p align="center">
+  <b>Figure 01</b>. Example of slit pore of calcite containing methane and ethane.
+  Click [here]([https://user-images.githubusercontent.com/98060271/150574991-7e6f68b7-26fe-45f1-bae2-3cfec67c4ef3.png](https://user-images.githubusercontent.com/98060271/203320930-e663ae3c-cfb7-4a35-99ef-25449f14e405.png)) to zoom the figure in.
+</p></em>
+
+![vmd_hexagon](https://user-images.githubusercontent.com/98060271/203320930-e663ae3c-cfb7-4a35-99ef-25449f14e405.png)
 
 
 
