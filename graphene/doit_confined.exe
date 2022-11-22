@@ -8,6 +8,3 @@ packmol < gra5.inp
 
 #Generate .gro file
 gmx editconf -f conf_gra5.pdb -o conf_gra5.gro -box 4.60725  4.76 1.6
-
-#move to folder
-cp conf_gra5.gro ../3_box 
