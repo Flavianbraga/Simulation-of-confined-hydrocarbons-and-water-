@@ -40,17 +40,9 @@ Flavia N. Braga<br>
 # Abstract 
 <p align="justify">
   The codes presented in this page were used to develop the dissertation of Flávia Nogueira Braga in partial fulfillment of the requirements for the degree of Master in Chemical Engineering at Unicamp - Brazil. The dissertation entitled "Study of diffusion aspects in confined media subject to external electric potential for application in catalysis via Molecular Dynamics simulations" is attached. 
-  
-  
-   <em><p align="center">
-  <b>Figure 01</b>. Example of slit pore of calcite containing methane and ethane.
-  Click [here](https://user-images.githubusercontent.com/98060271/150574991-7e6f68b7-26fe-45f1-bae2-3cfec67c4ef3.png) to zoom the figure in.
-</p></em>
-
-![SC](https://user-images.githubusercontent.com/98060271/150574991-7e6f68b7-26fe-45f1-bae2-3cfec67c4ef3.png)
-</p>
-
-  
+  In this dissertation, Molecular Dynamics was employed to conduct an exploratory study of the behavior of confined fluids subjected to an external electric field using GROMACS software. The simulations were performed at CENAPAD (Centro Nacional de Processamento de Alto Desempenho em São Paulo). The system of interest for this study was the Fischer-Tropsch synthesis, as a part of the gas to liquid process to transform natural gas into larger hydrocarbons. A mixture of water with hydrocarbons, modeled by methane, n-butane, and n-pentane, confined in a graphene slit pore is chosen to assess the influence of the external electric field in the general confinement behavior.
+ 
+ 
 ## Contents
 * <a href="#disclaimer">1. Disclaimer</a>
 * <a href="#language">2. Language</a>
@@ -64,7 +56,7 @@ Flavia N. Braga<br>
 
 ## Disclaimer
 <p align="justify">
-The authors make no warranties about the use of this software. The authors hold no liabilities for the use of this software. The authors do not recommend the use of this software whatsoever.The algorithm is made freely available to clarify any details discussed in the paper. All information contained herein regarding any specific methodology does not constitute or imply its endorsement or recommendation by the authors.
+The authors make no warranties about the use of this codes. The authors hold no liabilities for the use of this software. The authors do not recommend the use of this software whatsoever.The algorithm is made freely available to clarify any details discussed in the dissetation. All information contained herein regarding any specific methodology does not constitute or imply its endorsement or recommendation by the authors.
 </p>
 
 ## Language
@@ -78,14 +70,6 @@ The main program, subroutines and functions contain some explanatory comments an
   For compilation, we have used the GNU Compiler Collection (GCC). We tested the algorithm using some GCC versions: 9.3.0 in Ubuntu 20.04 LTS and 7.5.0 in Ubuntu 18.04 LTS.
 </p>
 
-We have built the code for the calculation of the self-difusion coefficients using the following command line:
-</p>
-
-```console
-gcc diff.c -o out -lm
-```
-</p>
-
 ## Reporting Errors
 <p align="justify">
 If you spot an error in the program files and all other documentation, please submit an issue report using the <a href="https://github.com/LESC-Unicamp/Self-diffusion-coefficients-for-confined-fluids-in-a-slit-pore-/issues">Issues</a> tab.
@@ -93,7 +77,19 @@ If you spot an error in the program files and all other documentation, please su
 
 ## Input files preparation
 <p align="justify">
-Before running the code to obtain the coefficients, the user should first prepare the files obtained from Molecular Dynamics (MD) simulation. The program used for MD simulations was GROMACS (version 2018.03 tested). Multiple files are obtained as outputs in the simulation. Here, the files will be referred by "name.type".
+Before using GROMACS (version 2021.2 tested) the initial files have to be prepared for the simulation using the software packmol in addition to C codes.
+
+The system chosen as representative of the Fischer-Tropsch synthesis was the product of the reaction: hydrocarbons and water, confined in a slit pore of graphene sheets, with 5 layers in each side of the pore of 5.88 nm of width [Papavasileiou et al., 2021]. The hydrocarbons selected were methane, n-butane, and n-pentane. The composition of the mixtures studied were calculated based on the stoichiometry of the FTS reaction and assumes a 1:1 H 2 O : CH x (x = 2 or 3) ratio in the pore.
+
+Initially, one sheet of graphene was created based on a sort of unitary cell of 4 atoms of carbon, forming half of regular hexagon with an angle of 120° between the atoms, as show in Figure 3.1. This is done using sheet <a href="https://github.com/Flavianbraga/Codes-for-dissertation/tree/main/graphene">Graphene</a>. 
+
+
+
+
+
+
+Before running the code to obtain the coefficients, the user should first prepare the files obtained from Molecular Dynamics (MD) simulation. The program used for MD simulations was GROMACS (version 2018.03 tested). Multiple files are obtained as outputs in the simulation. 
+Here, the files will be referred by "name.type".
 </p>
 First, it is necessary to obtain the mean density of the molecules in function of the distance in z. This was done using GROMACS and the files .trr and .tpr, as shown by the following command line:
 </p>
