@@ -54,7 +54,7 @@ Luís Fernando M. Franco<br>
 
 ## Disclaimer
 <p align="justify">
-The authors make no warranties about the use of this codes. The authors hold no liabilities for the use of this software. The authors do not recommend the use of this software whatsoever.The algorithm is made freely available to clarify any details discussed in the dissetation. All information contained herein regarding any specific methodology does not constitute or imply its endorsement or recommendation by the authors.
+The authors make no warranties about the use of this codes. The authors hold no liabilities for the use of this software. The authors do not recommend the use of this software whatsoever. The algorithm is made freely available to clarify any details discussed in the dissertation. All information contained herein regarding any specific methodology does not constitute or imply its endorsement or recommendation by the authors.
 </p>
 
 ## Language
