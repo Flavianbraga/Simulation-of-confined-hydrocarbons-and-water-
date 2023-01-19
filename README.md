@@ -36,7 +36,7 @@
 <p align="center"><b>Authors</b></p>
 <p align="center">
 Flavia N. Braga<br>
-Luís Fernando Mercier Franco<br>
+Luís Fernando M. Franco<br>
  
 # Abstract 
 <p align="justify">
