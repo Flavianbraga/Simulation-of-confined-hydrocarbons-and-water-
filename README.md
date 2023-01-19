@@ -59,7 +59,7 @@ The authors make no warranties about the use of this codes. The authors hold no 
 
 ## Language
 <p align="justify">
-The main program, subroutines and functions contain some explanatory comments and are mainly written in C language. 
+The main program, subroutines and functions contain some explanatory comments are mainly written in C language. 
 </p>
 
 ## Building and Compilation
@@ -75,7 +75,7 @@ If you spot an error in the program files and all other documentation, please su
 
 ## Inicial configuration
 <p align="justify">
-Before using GROMACS (version 2021.2 tested) the initial files have to be prepared for the simulation using the softwares PACKMOL, GROMACS in addition to C codes.
+Before running the simulations with GROMACS (version 2021.2 tested) the initial files have to be prepared for the simulation using the softwares PACKMOL, GROMACS in addition to C codes.
   The system chosen as representative of the Fischer-Tropsch synthesis was the product of the reaction: hydrocarbons and water, confined in a slit pore of graphene sheets, with 5 layers in each side of the pore of 5.88 nm of width [Papavasileiou et al., 2021]. The hydrocarbons selected were methane, n-butane, and n-pentane. The composition of the mixtures studied were calculated based on the stoichiometry of the FTS reaction and assumes a 1:1 H 2 O : CH x (x = 2 or 3) ratio in the pore.
   
 ### Graphene sheets
