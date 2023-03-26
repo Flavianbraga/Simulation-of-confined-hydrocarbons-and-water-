@@ -1,5 +1,0 @@
-#Generate bulk initial configuration
-packmol < bulk.inp
-
-#Criação do .gro
-gmx editconf -f conf_bulk.pdb -o conf_bulk.gro -box 4.60725 4.76 5.60
