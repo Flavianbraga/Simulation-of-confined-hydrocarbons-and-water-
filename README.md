@@ -40,7 +40,7 @@ Luís Fernando M. Franco<br>
  
 # Abstract 
 <p align="justify">
-This repository is constituted of the input files to run a Molecular Dynamics Simulation with GROMACS for a slit pore. A mixture of water with hydrocarbons, modeled by methane, n-butane, and n-pentane, confined in a graphene slit pore is chosen to assess the influence of the external electric field in the general confinement behavior.
+This repository is constituted of the input files to run a Molecular Dynamics Simulation with GROMACS for a slit pore. A mixture of water with hydrocarbons, modeled by methane, n-butane, and n-pentane, confined in a graphene slit pore is chosen to assess the influence of the external electric field in the general confinement behavior. In this work, x and y are called the parallel directions and z is the perpenticular direction, since the wall of the system is in the z axis.
  
  
 ## Contents
@@ -74,9 +74,14 @@ If you spot an error in the program files and all other documentation, please su
 
 ## Inicial configuration
 <p align="justify">
-Before running the simulations with GROMACS (version 2021.2 tested) the initial files have to be prepared for the simulation using the softwares PACKMOL, GROMACS in addition to C codes.
+Before running the simulations with GROMACS (version 2021.2 tested) the initial files have to be prepared for the simulation using the softwares PACKMOL and GROMACS.
   The system chosen as representative of the Fischer-Tropsch synthesis was the product of the reaction: hydrocarbons and water, confined in a slit pore of graphene sheets, with 5 layers in each side of the pore of 5.88 nm of width [Papavasileiou et al., 2021]. The hydrocarbons selected were methane, n-butane, and n-pentane. The composition of the mixtures studied were calculated based on the stoichiometry of the FTS reaction and assumes a 1:1 H 2 O : CH x (x = 2 or 3) ratio in the pore.
    
+  GROMACS input files can be divided in three categories: configuration (.gro), force field (.ff and .itp), and simulation setups (.mdp).
+
+  The calcite force field implementation can be found in the calcium.itp, carbonate.itp and calcite.gro. CH4 and C2H4 are respectively in files methane.itp and ethane.itp. The .gro of the complete system named as calcite_met_eth_35A.gro.
+The interactions between particle types are present in the ff.itp file. For further information, the reader may refer to the original papers for the Hydrocarbons (Martin and Siepmann, 1998) and Calcite (Xiao et al. 2011).
+  
   The steepest descent method was used with a maximum number of iterations equal to 50000 to relax the initial multilayer graphene. The file used as a input in GROMACS was minim.mdp.
 </p>
 
