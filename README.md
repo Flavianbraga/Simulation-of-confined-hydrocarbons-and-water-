@@ -49,6 +49,8 @@ This repository is constituted of the input files to run a Molecular Dynamics Si
 * <a href="#building-and-compilation">3. Building and Compilation</a>
 * <a href="#reporting-errors">4. Reporting Errors</a>
 * <a href="#input-files-preparation">5. Input files preparation</a>
+* <a href="#running-the-simulations">6. Running the simulations</a>
+  
 
 
 ## Disclaimer
@@ -100,6 +102,35 @@ The configuration file of the graphene walls is  <a href="https://github.com/Fla
 ### Force field files
 
 The general force field implementation can be found in the topol.top file for water and graphene  and the interaction between particles. The hydrocarbons are refered in topol.top as the files: methane.itp, ethane.itp and pentane.itp. It is important to highlight that the oplsaa force field mus be installed in GROMACS for the simulation to run, or the files ffnonbonded.itp and ffbonded.itp must be also present in the folder. For further information, the reader may refer to the original papers: OPLS-AA [Jorgensen et al., 1996] for graphene and hydrocarbons and TIP4/2005 [Abascal and Vega, 2005] for water.
+
+### Bilding the graphene box
+
+Initially the bulk fluids and the graphene layers are separated, in order to unite them it is necessary to use the files available at folder <a href="https://github.com/Flavianbraga/Simulation-of-confined-hydrocarbons-and-water-/tree/main/2_box">2_box</a>. A file in the C language is used to do the merge. The first step is to compile the file:
+
+  ```console
+ gcc input_conf.c -o out -lm
+ ```
+Next, the program must be run. The command varies accondoing to the hydrocarbon used in the mixture because they have diffent numbers of hydrogen and carbon atoms. For methane, we have:
+ 
+  ```console
+./out em.gro conf_bulk.gro confined_xy.gro 836 1680 5 1680 4
+  ``` 
+  
+  For n-butane:
+  
+  ```console
+  ./out em.gro conf_bulk.gro confined_xy.gro 836 420 14 1680 4 
+  ``` 
+  
+  While for n-pentane:
+  
+  ```console
+  ./out em.gro conf_bulk.gro confined_xy.gro 836 336 17 1680 4 
+  ``` 
+
+## Running the simulations
+
+
   
   
   
