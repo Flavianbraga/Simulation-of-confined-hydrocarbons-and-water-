@@ -72,40 +72,36 @@ The main program, subroutines and functions contain some explanatory comments ar
 If you spot an error in the program files and all other documentation, please submit an issue report using the <a href="https://github.com/Flavianbraga/Codes-for-dissertation/issues)">Issues</a> tab.
 </p>
 
-## Inicial configuration
+## Input files preparation
 <p align="justify">
-Before running the simulations with GROMACS (version 2021.2 tested) the initial files have to be prepared for the simulation using the softwares PACKMOL and GROMACS.
-  The system chosen as representative of the Fischer-Tropsch synthesis was the product of the reaction: hydrocarbons and water, confined in a slit pore of graphene sheets, with 5 layers in each side of the pore of 5.88 nm of width [Papavasileiou et al., 2021]. The hydrocarbons selected were methane, n-butane, and n-pentane. The composition of the mixtures studied were calculated based on the stoichiometry of the FTS reaction and assumes a 1:1 H 2 O : CH x (x = 2 or 3) ratio in the pore.
-   
-  GROMACS input files can be divided in three categories: configuration (.gro), force field (.ff and .itp), and simulation setups (.mdp).
+The system chosen as representative of the Fischer-Tropsch synthesis was the product of the reaction: hydrocarbons and water, confined in a slit pore of graphene sheets, with 5 layers in each side of the pore of 5.88 nm of width [Papavasileiou et al., 2021]. The hydrocarbons selected were methane, n-butane, and n-pentane. The composition of the mixtures studied were calculated based on the stoichiometry of the FTS reaction and assumes a 1:1 H 2 O : CH x (x = 2 or 3) ratio in the pore.
 
-  The calcite force field implementation can be found in the calcium.itp, carbonate.itp and calcite.gro. CH4 and C2H4 are respectively in files methane.itp and ethane.itp. The .gro of the complete system named as calcite_met_eth_35A.gro.
-The interactions between particle types are present in the ff.itp file. For further information, the reader may refer to the original papers for the Hydrocarbons (Martin and Siepmann, 1998) and Calcite (Xiao et al. 2011).
-  
-  The steepest descent method was used with a maximum number of iterations equal to 50000 to relax the initial multilayer graphene. The file used as a input in GROMACS was minim.mdp.
+Before running the simulations with GROMACS (version 2021.2 tested) the initial files have to be prepared for the simulation. GROMACS input files can be divided in three categories: configuration (.gro), force field (.ff and .itp), and simulation setups (.mdp). T
 </p>
 
-### Bulk fluids 
+### Configuration files 
 
-The mixtures of hydrocarbons and water were created with PACKMOL in a box of size 46.0725 × 47.6 × 53.2 Å. The files refered to this preparation are present in <a href="https://github.com/Flavianbraga/Codes-for-dissertation/tree/main/1_bulk">1_bulk</a>. Once in possession of the .pdb files, the following command is used, selectiong one hydrocarbon of interest at a time in the file bulk.inp:
+The configuration files of the bulk fluids are obtained from Packmol. The mixtures of hydrocarbons and water were created in a box of size 46.0725 × 47.6 × 53.2 Å. The files refered to this preparation are present in <a href="https://github.com/Flavianbraga/Simulation-of-confined-hydrocarbons-and-water-/tree/main/1_bulk">1_bulk</a>. Once in possession of the .pdb files, the following command is used, selecting one hydrocarbon of interest at a time in the file bulk.inp:
 
   ```console
  packmol < bulk.inp
  ```
- It is important to remember that in Packmol, comments are adressed as "#" in bulk.inp. 
+It is important to remember that in Packmol, comments are adressed as "#" in bulk.inp. If the goal is to change the number of molecules, the .inp file must be changed.
  
- Once again it necessary to convert .pdb files to .gro files using:
+Next, it is necessary to convert .pdb files to .gro files using:
  
   ```console
 gmx editconf -f conf_bulk.pdb -o conf_bulk.gro -box 4.60725 4.76 5.60
   ``` 
   
-## Input files preparation
+The configuration file of the graphene walls is  <a href="https://github.com/Flavianbraga/Simulation-of-confined-hydrocarbons-and-water-/blob/main/2_box/em.gro">em.gro</a>. The steepest descent method was used with a maximum number of iterations equal to 50000 to relax the initial multilayer graphene. The file used as a input in GROMACS was minim.mdp.
 
-### Topology files
 
-The files needed for the topology of the hydrocarbons were build as referece to another <a href="https://github.com/wesbarnett/OPLS-molecules">Github page</a>. 
+### Force field files
 
+The general force field implementation can be found in the topol.top file for water and graphene  and the interaction between particles. The hydrocarbons are refered in topol.top as the files: methane.itp, ethane.itp and pentane.itp. It is important to highlight that the oplsaa force field mus be installed in GROMACS for the simulation to run, or the files ffnonbonded.itp and ffbonded.itp must be also present in the folder. For further information, the reader may refer to the original papers: OPLS-AA [Jorgensen et al., 1996] for graphene and hydrocarbons and TIP4/2005 [Abascal and Vega, 2005] for water.
+  
+  
   
 
  
