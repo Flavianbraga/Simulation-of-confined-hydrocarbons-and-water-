@@ -48,8 +48,8 @@ This repository is constituted of the input files to run a Molecular Dynamics Si
 * <a href="#language">2. Language</a>
 * <a href="#building-and-compilation">3. Building and Compilation</a>
 * <a href="#reporting-errors">4. Reporting Errors</a>
-* <a href="#initial-configuration">5. Inicial configuration</a>
-* <a href="#input-files-preparation">6. Input files preparation</a>
+* <a href="#input-files-preparation">5. Input files preparation</a>
+
 
 ## Disclaimer
 <p align="justify">
