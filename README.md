@@ -140,7 +140,7 @@ First, the minimization is necessary:
   gmx mdrun -v -deffnm em
   ```
 
-The next steps are minimization and production and depend on the intensity of the electric force field to be applied. For exemple, for 7.5 V/nm:
+The next steps are minimization and production and depend on the intensity of the electric force field to be applied, changing the .mdp file. For exemple, for 7.5 V/nm:
 
 ```console
   gmx grompp -f nvt_7.5ef.mdp -c em.gro -p topol.top -o nvt_out_0ef.tpr -n index_xy.ndx -r confined_xy.gro
