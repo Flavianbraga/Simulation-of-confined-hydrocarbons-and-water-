@@ -104,7 +104,7 @@ The configuration file of the graphene walls is  <a href="https://github.com/Fla
 
 The general force field implementation can be found in the topol.top file for water and graphene  and the interaction between particles. The hydrocarbons are refered in topol.top as the files: methane.itp, ethane.itp and pentane.itp. It is important to highlight that the oplsaa force field mus be installed in GROMACS for the simulation to run, or the files ffnonbonded.itp and ffbonded.itp must be also present in the folder. For further information, the reader may refer to the original papers: OPLS-AA [Jorgensen et al., 1996] for graphene and hydrocarbons and TIP4/2005 [Abascal and Vega, 2005] for water.
 
-### Bilding the confined fluids box
+### Building the confined fluids box
 
 Initially the bulk fluids and the graphene layers are separated, in order to unite them it is necessary to use the files available at folder <a href="https://github.com/Flavianbraga/Simulation-of-confined-hydrocarbons-and-water-/tree/main/2_box">2_box</a>. A file in the C language is used to do the merge. The first step is to compile the file:
 
