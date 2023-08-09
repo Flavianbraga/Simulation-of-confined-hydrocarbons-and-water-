@@ -1,5 +1,0 @@
-#gmx make_ndx -f confined_carga.gro -o index_carga.ndx
-gmx grompp -f minim.mdp -c confined_carga.gro -p topol.top -o em_carga.tpr -n index_carga.ndx -r confined_carga.gro -maxwarn 1 
-gmx mdrun -v -deffnm em_carga
-gmx grompp -f nvt.mdp -c em_carga.gro -p topol.top -o nvt_out_carga.tpr -n index_carga.ndx -r confined_carga.gro
-gmx mdrun -v -deffnm nvt_out_carga -nt 8 -s nvt_out_carga.tpr
