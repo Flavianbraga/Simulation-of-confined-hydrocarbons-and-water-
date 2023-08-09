@@ -1,8 +1,0 @@
-#Compile program file
-gcc order_par.c -o out -lm
-#Run code
-./out order.xvg order_par.xvg 1000
-#Arguments:
-#1) Input file order.xvg                        
-#2) Output file order_par.xvg                   
-#3) Number of slabs used in order.xvg          
