@@ -132,3 +132,18 @@ Next, the program must be run. The command varies according to the hydrocarbon u
 ## Running the simulations
 
 To run the simulations as described in the following command lines the user must have all GROMACS input files present in <a href="https://github.com/Flavianbraga/Simulation-of-confined-hydrocarbons-and-water-/tree/main/3_simulation">3_simulation</a> plus the output file from <a href="https://github.com/Flavianbraga/Simulation-of-confined-hydrocarbons-and-water-/tree/main/2_box">2_box</a> in the current diretory where the commands will be issued.
+
+First, the minimization is necessary:
+
+```console
+  gmx grompp -f minim.mdp -c confined_xy.gro -p topol.top -o em.tpr -n index_xy.ndx -r confined_xy.gro 
+  gmx mdrun -v -deffnm em
+  ```
+
+The next steps are minimization and production and depend on the intensity of the electric force field to be applied. For exemple, for 7.5 V/nm:
+
+```console
+  gmx grompp -f nvt_7.5ef.mdp -c em.gro -p topol.top -o nvt_out_0ef.tpr -n index_xy.ndx -r confined_xy.gro
+  gmx mdrun -pin on -v -deffnm nvt_out_0ef -s nvt_out_0ef.tpr
+  ```
+
