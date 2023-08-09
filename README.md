@@ -40,7 +40,8 @@ Luís Fernando M. Franco<br>
  
 # Abstract 
 <p align="justify">
-This repository is constituted of the input files to run a Molecular Dynamics Simulation with GROMACS for a slit pore. A mixture of water with hydrocarbons, modeled by methane, n-butane, and n-pentane, confined in a graphene slit pore is chosen to assess the influence of the external electric field in the general confinement behavior. In this work, x and y are called the parallel directions and z is the perpenticular direction, since the wall of the system is in the z axis.
+This repository is constituted of the input files to run a Molecular Dynamics Simulation with GROMACS for a slit pore as refered in the paper "Adsorption under an external electric field: a molecular dynamics simulation study on mixtures of hydrocarbons and water confined
+within graphene". A mixture of water with hydrocarbons, modeled by methane, n-butane, and n-pentane, confined in a graphene slit pore is chosen to assess the influence of the external electric field in the general confinement behavior. In this work, x and y are called the parallel directions and z is the perpenticular direction, since the wall of the system is in the z axis.
  
  
 ## Contents
