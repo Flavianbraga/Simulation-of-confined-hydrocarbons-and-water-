@@ -110,7 +110,7 @@ Initially the bulk fluids and the graphene layers are separated, in order to uni
   ```console
  gcc input_conf.c -o out -lm
  ```
-Next, the program must be run. The command varies accondoing to the hydrocarbon used in the mixture because they have diffent numbers of hydrogen and carbon atoms. For methane, we have:
+Next, the program must be run. The command varies according to the hydrocarbon used in the mixture because they have diffent numbers of hydrogen and carbon atoms. For methane, we have:
  
   ```console
 ./out em.gro conf_bulk.gro confined_xy.gro 836 1680 5 1680 4
